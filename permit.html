@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-  <title>晚安华师 · 发呆许可证生成器（细长版）</title>
+  <title>晚安华师 · 发呆许可证生成器（紧凑细长版）</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -25,7 +25,7 @@
       border: 1px solid rgba(180,200,160,0.3);
     }
     h2 { display: flex; align-items: center; gap: 8px; font-weight: 400; font-size: 1.5rem; color: #3a5e3c; letter-spacing: 2px; margin-bottom: 6px; padding-left: 8px; }
-    h2 span { background: #d9e6d3; padding: 2px 14px; border-radius: 40px; font-size: 0.9rem; color: #2e4a30; }
+    /* 移除晚安华师徽章相关样式，不再需要 */
     .sub-line { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; padding: 0 8px; }
     .sub-line p { color: #6a7e5c; font-size: 0.95rem; font-style: italic; }
     .sub-line .badge { background: #ffffffc0; border-radius: 30px; padding: 4px 16px; font-size: 0.8rem; color: #4b6b3e; border: 1px dashed #9bb88b; backdrop-filter: blur(5px); }
@@ -63,7 +63,8 @@
 </head>
 <body>
 <div class="card-generator">
-  <h2>🌿 发呆许可证·生成器 <span>晚安华师</span></h2>
+  <!-- 顶部只保留主标题，晚安华师移到SVG内部 -->
+  <h2>🌿 发呆许可证·生成器</h2>
   <div class="sub-line">
     <p>「允许浪费10分钟 · 合法放空」</p>
     <div class="badge">公园20分钟效应·华师特别版</div>
@@ -71,7 +72,6 @@
 
   <div class="license-wrapper">
     <div class="svg-container" id="svgContainer">
-      <!-- 修改画布为540x900，比例更细长 -->
       <svg viewBox="0 0 540 900" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" version="1.1">
         <defs>
           <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -83,60 +83,61 @@
           <filter id="softShadow"><feDropShadow dx="3" dy="5" stdDeviation="6" flood-color="#4d6030" flood-opacity="0.1"/></filter>
           <filter id="stampBlur"><feGaussianBlur stdDeviation="0.8"/></filter>
         </defs>
-        <!-- 外框 540x900 内边距调整 -->
         <rect x="20" y="20" width="500" height="860" rx="36" fill="url(#bgGrad)" stroke="#c3d2b6" stroke-width="3" filter="url(#softShadow)"/>
         <rect x="35" y="35" width="470" height="830" rx="28" fill="none" stroke="#b8cfaa" stroke-width="1.8" stroke-dasharray="12 8" opacity="0.7"/>
         <rect x="45" y="45" width="450" height="810" rx="20" fill="none" stroke="#d4e2c6" stroke-width="1" opacity="0.5"/>
         
-        <!-- 装饰插画保持大致位置，微调坐标 -->
+        <!-- 装饰插画位置微调 -->
         <g transform="translate(60, 70)" opacity="0.7"><rect x="0" y="8" width="28" height="22" rx="2" fill="#d9c8a2" stroke="#a28b5e" stroke-width="1.2"/><rect x="0" y="8" width="14" height="22" fill="#f1e7ce" stroke="#a28b5e" stroke-width="0.8"/><line x1="14" y1="8" x2="14" y2="30" stroke="#a28b5e" stroke-width="1"/><path d="M-8,10 C-18,2 -20,-8 -10,-12 C-5,-14 0,-8 -2,2 Z" fill="#a1b88c" stroke="#6f8a5e" stroke-width="0.8"/></g>
         <g transform="translate(440, 70)" opacity="0.6"><path d="M10,30 C20,20 30,10 25,0 C22,-5 15,-2 12,8 C10,14 8,20 10,30 Z" fill="#b4cf9d" stroke="#7f9a6e" stroke-width="1"/><circle cx="32" cy="18" r="6" fill="#f7d1b3" stroke="#c2946e"/></g>
         <g transform="translate(60, 750)" opacity="0.65"><rect x="0" y="20" width="36" height="24" rx="3" fill="#c1ae89" stroke="#8f7b58"/><path d="M40,30 C50,22 48,12 38,10 C32,9 28,16 32,24 Z" fill="#92aa7a" stroke="#5f7450"/></g>
         <g transform="translate(430, 760)" opacity="0.6"><rect x="0" y="15" width="32" height="22" rx="2" fill="#e3cdaf" stroke="#a4865e"/><path d="M-6,18 C-16,10 -14,0 -4,-2 C2,-3 6,4 2,14 Z" fill="#b8cfaa"/></g>
 
-        <!-- 标题区 坐标居中 -->
-        <text x="270" y="150" text-anchor="middle" font-family="'Caveat','KaiTi',cursive" font-size="44" font-weight="700" fill="#3c5e35" letter-spacing="4">华师校园发呆许可证</text>
-        <text x="270" y="190" text-anchor="middle" font-family="'Caveat','楷体',cursive" font-size="18" fill="#6f8b60">—— 合法浪费十分钟·心灵呼吸证 ——</text>
-        <line x1="100" y1="220" x2="440" y2="220" stroke="#b3c7a3" stroke-width="1.5" stroke-dasharray="4 6"/>
+        <!-- 主标题：缩小字号，增加下方晚安华师小字 -->
+        <text x="270" y="130" text-anchor="middle" font-family="'Caveat','KaiTi',cursive" font-size="38" font-weight="700" fill="#3c5e35" letter-spacing="3">华师校园发呆许可证</text>
+        <text x="270" y="160" text-anchor="middle" font-family="'Caveat','楷体',cursive" font-size="16" fill="#7a9a6a">晚安华师</text>
+        <text x="270" y="190" text-anchor="middle" font-family="'Caveat','楷体',cursive" font-size="16" fill="#6f8b60">—— 合法浪费十分钟·心灵呼吸证 ——</text>
+        <line x1="100" y1="215" x2="440" y2="215" stroke="#b3c7a3" stroke-width="1.5" stroke-dasharray="4 6"/>
         
-        <!-- 持证人区域 -->
-        <text x="150" y="270" font-family="'Segoe UI',sans-serif" font-size="22" fill="#4b6042">允许</text>
-        <text x="210" y="270" font-family="'Segoe UI',sans-serif" font-size="22" fill="#4b6042">:</text>
-        <text id="licenseName" x="240" y="270" font-family="'Caveat','KaiTi',cursive" font-size="34" font-weight="700" fill="#2b4829" text-anchor="start">华师小晚</text>
-        <text x="380" y="305" font-family="'Segoe UI',sans-serif" font-size="17" fill="#6f8b60" font-style="italic">在华师校园</text>
-        <line x1="150" y1="320" x2="440" y2="320" stroke="#7f9a71" stroke-width="1.8" stroke-dasharray="3 4" opacity="0.5"/>
+        <!-- 持证人区域：y坐标上移 -->
+        <text x="150" y="255" font-family="'Segoe UI',sans-serif" font-size="21" fill="#4b6042">允许</text>
+        <text x="210" y="255" font-family="'Segoe UI',sans-serif" font-size="21" fill="#4b6042">:</text>
+        <text id="licenseName" x="240" y="255" font-family="'Caveat','KaiTi',cursive" font-size="32" font-weight="700" fill="#2b4829" text-anchor="start">华师小晚</text>
+        <text x="380" y="285" font-family="'Segoe UI',sans-serif" font-size="16" fill="#6f8b60" font-style="italic">在华师校园</text>
+        <line x1="150" y1="300" x2="440" y2="300" stroke="#7f9a71" stroke-width="1.8" stroke-dasharray="3 4" opacity="0.5"/>
         
-        <!-- 动态活动区域，下移留出更多空间 -->
-        <text id="activityText" x="270" y="400" text-anchor="middle" font-family="'Caveat','KaiTi','华文楷体',cursive" font-size="34" fill="#386035" font-weight="700">看云 10 分钟</text>
+        <!-- 动态活动文本 -->
+        <text id="activityText" x="270" y="365" text-anchor="middle" font-family="'Caveat','KaiTi','华文楷体',cursive" font-size="30" fill="#386035" font-weight="700">看云 10 分钟</text>
         
-        <g font-family="'Segoe UI',sans-serif" font-size="19" fill="#506545">
-          <text x="150" y="480">有效期</text>
-          <text x="230" y="480" font-family="'Caveat',cursive" font-size="26" fill="#386035">自签发起 · 即刻生效</text>
-          <text x="150" y="520">签发机关</text>
-          <text x="250" y="520" font-family="'Caveat','楷体',cursive" font-size="24" fill="#386035">晚安华师 · 心灵休憩站</text>
+        <!-- 信息栏：压缩间距 -->
+        <g font-family="'Segoe UI',sans-serif" font-size="18" fill="#506545">
+          <text x="150" y="430">有效期</text>
+          <text x="230" y="430" font-family="'Caveat',cursive" font-size="24" fill="#386035">自签发起 · 即刻生效</text>
+          <text x="150" y="465">签发机关</text>
+          <text x="250" y="465" font-family="'Caveat','楷体',cursive" font-size="22" fill="#386035">晚安华师 · 心灵休憩站</text>
         </g>
         
-        <text x="150" y="565" font-family="'Segoe UI',sans-serif" font-size="16" fill="#859e78">编号</text>
-        <text id="licenseId" x="210" y="565" font-family="monospace" font-size="16" fill="#5f7a50" font-weight="500">SCNU·20260414·019</text>
-        <text x="150" y="595" font-family="'Segoe UI',sans-serif" font-size="16" fill="#859e78">签发日期</text>
-        <text id="issueDate" x="250" y="595" font-family="monospace" font-size="16" fill="#5f7a50">2026.04.14</text>
+        <!-- 编号和日期上移 -->
+        <text x="150" y="510" font-family="'Segoe UI',sans-serif" font-size="15" fill="#859e78">编号</text>
+        <text id="licenseId" x="210" y="510" font-family="monospace" font-size="15" fill="#5f7a50" font-weight="500">SCNU·20260414·019</text>
+        <text x="150" y="540" font-family="'Segoe UI',sans-serif" font-size="15" fill="#859e78">签发日期</text>
+        <text id="issueDate" x="250" y="540" font-family="monospace" font-size="15" fill="#5f7a50">2026.04.14</text>
         
         <!-- 印章位置微调 -->
-        <g transform="translate(420, 600) rotate(-12)">
-          <circle cx="0" cy="0" r="40" fill="none" stroke="url(#stampGrad)" stroke-width="4.5" opacity="0.7" filter="url(#stampBlur)"/>
-          <circle cx="0" cy="0" r="34" fill="none" stroke="#b05a4a" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.7"/>
-          <text x="0" y="-4" text-anchor="middle" font-family="'Caveat','楷体',cursive" font-size="20" font-weight="700" fill="#9f4e3e" opacity="0.85">准许发呆</text>
-          <text x="0" y="18" text-anchor="middle" font-family="'Caveat',cursive" font-size="14" fill="#a85e4d" opacity="0.8">放空专用</text>
+        <g transform="translate(420, 540) rotate(-12)">
+          <circle cx="0" cy="0" r="38" fill="none" stroke="url(#stampGrad)" stroke-width="4.5" opacity="0.7" filter="url(#stampBlur)"/>
+          <circle cx="0" cy="0" r="32" fill="none" stroke="#b05a4a" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.7"/>
+          <text x="0" y="-4" text-anchor="middle" font-family="'Caveat','楷体',cursive" font-size="19" font-weight="700" fill="#9f4e3e" opacity="0.85">准许发呆</text>
+          <text x="0" y="18" text-anchor="middle" font-family="'Caveat',cursive" font-size="13" fill="#a85e4d" opacity="0.8">放空专用</text>
         </g>
         
-        <!-- 底部寄语 -->
-        <text x="270" y="700" text-anchor="middle" font-family="'Caveat','楷体',cursive" font-size="24" fill="#859e74" font-style="italic">人生不是赶路，偶尔也要看看云 ☁️</text>
-        <text x="270" y="740" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-size="14" fill="#a4b99a">* 本证仅供心灵放松，逾期可续杯（再发一次呆）*</text>
+        <!-- 底部寄语，上移留出更多空间 -->
+        <text x="270" y="640" text-anchor="middle" font-family="'Caveat','楷体',cursive" font-size="23" fill="#859e74" font-style="italic">人生不是赶路，偶尔也要看看云 ☁️</text>
+        <text x="270" y="680" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-size="13" fill="#a4b99a">* 本证仅供心灵放松，逾期可续杯（再发一次呆）*</text>
       </svg>
     </div>
   </div>
 
-  <!-- 以下JS与交互保持不变 -->
   <div class="input-panel">
     <div class="name-input-area">
       <label for="userName">✨ 你的名字</label>
@@ -188,9 +189,9 @@
     function updateLicenseDisplay(name) {
       let displayName = name.trim() || '华师发呆人';
       licenseNameText.textContent = displayName;
-      let fontSize = 34;
-      if (displayName.length >= 9) fontSize = 30;
-      if (displayName.length >= 11) fontSize = 26;
+      let fontSize = 32;
+      if (displayName.length >= 9) fontSize = 28;
+      if (displayName.length >= 11) fontSize = 24;
       licenseNameText.setAttribute('font-size', fontSize);
       licenseIdText.textContent = generateLicenseId();
       issueDateText.textContent = getFormattedDate();
